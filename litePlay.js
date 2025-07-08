@@ -611,8 +611,8 @@ export function play(...theList) {
 
 // set default instrument
 export function instrument(instr) {
-    if(typeof theList[0] === 'function')
-        return instrument(theList[0]());
+    if(typeof instr[0] === 'function')
+        return instrument(instr[0]());
     if(isInstr(instr)) defInstr = instr;
     return defInstr;
 }
