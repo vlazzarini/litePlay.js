@@ -133,7 +133,7 @@ iatt table p7,23
 idec table p7,24
 isus table p7,25
 irel table p7,26
-iamp table p5, 5
+iamp tablei p5, 5
 aenv madsr iatt+1/kr, idec, isus, irel
 imicro = 2^(frac(p4)/12)
 kbend table p7,14
