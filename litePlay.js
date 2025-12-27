@@ -611,8 +611,8 @@ export function play(...theList) {
 
 // set default instrument
 export function instrument(instr) {
-    if(typeof theList[0] === 'function')
-        return instrument(theList[0]());
+    if(typeof instr[0] === 'function')
+        return instrument(instr[0]());
     if(isInstr(instr)) defInstr = instr;
     return defInstr;
 }
@@ -922,12 +922,137 @@ class Instrumento extends Instrument {
     }
 }
 
-// Duas opções para tradução de instrumentos
-// criando um novo objeto com interface em PT
-export const bateria = new Instrumento(2, true, 40);
-// apenas fazendo um novo nome em PT para o mesmo objeto
-export const violino = violin;
+export const  pianoDeCauda = grandPiano;
+export const  pianoBrilhante = brightPiano;
+export const  deCaudaElétrico = electricGrand;
+export const  pianoRachado = honkyPiano; //honky?
+export const  pianoElétrico = electricPiano;
+export const  pianoElétrico2 = electricPiano2;
+export const  cravo = harpsichord;
+export const  clavinete = clavinet;
+export const  cravoElétrico = clavinet;
 
+export const  caixaDeMúsica = musicBox;
+export const  vibrafone = vibraphone;
+export const  xilofone = xylophone;
+export const  carrilhão = tubularBells; //sinos tubulares?
+export const  sininho = tinkleBell;
+export const  sino = tinkleBell;
 
+export const órgãoElétrico = drawbarOrgan; //hammond?
+export const órgãoPercussivo = percussiveOrgan;
+export const órgãoDeRock = rockOrgan;
+export const órgão = rockOrgan;
+export const órgãoLitúrgico = churchOrgan;
+export const órgãoDePalhetas = reedOrgan;
+export const acordeão = accordion;
+export const gaita = harmonic;
+export const acordeãoDeTango = tangoAccordion;
 
+export const  violão = nylonAcousticGuitar;
+export const  vilãoDeNáilon = nylonAcousticGuitar;
+export const  violãoDeAço = steelAcousticGuitar;
+export const  guitarraDeJazz = jazzElectricGuitar;
+export const  guitarraLimpa = clearElectricGuitar;
+export const  guitarraAbafada = mutedElectricGuitar;
+export const  guitarraOverdrive = overdrivenGuitar;
+export const  guitarraDistorcida = distortionGuitar;
+export const  guitarraHarmônicos = guitarHarmonics;
+export const  samisém = shamisen;
+export const  cordasPizzicato = pizzicatoStrings;
+export const  harpaOrquestral = orchestralHarp;
+export const  harpa = orchestralHarp;
 
+export const  baixoAcústico = acousticBass;
+export const  baixoElétrico = fingerElectricBass;
+export const  baixoElétricoPalhetado = pickElectricBass;
+export const  baixoFretless = fretlessBass;
+export const  baixo = fretlessBass;
+export const  baixoSlap1 = slapBass1;
+export const  baixoSlap2 = slapBass2;
+export const  baixoSintetizado1 = synthBass1;
+export const  baixoSintetizado2 = synthBass2;
+
+export const  violino = violin;
+export const  violoncelo = cello;
+export const  celo = violoncelo;
+export const  contrabaixo = contrabass;
+export const  cordasTremolo = tremoloStrings;
+
+export const  cordas = stringEnsemble1;
+export const  cordas2 = stringEnsemble2;
+export const  cordasSintetizadas1 = synthStrings1;
+export const  cordasSintetizadas2 = synthStrings2;
+
+export const  coralAahs = choirAahs;
+export const  coralOohs = voiceOohs;
+export const  vozSintetizada = synthVoice;
+
+export const  golpeOrquestral = orchestralHit;
+export const  golpe = orchestralHit;
+
+export const  trompete = trumpet;
+export const  trompeteAbafado = mutedTrumpet;
+export const  trompeteComSurdina = mutedTrumpet;
+export const  trompaFrancesa = frenchHorn;
+export const  trompa = trompaFrancesa;
+export const  seçãoDeMetais = brassSection;
+export const  metais = seçãoDeMetais;
+export const  metalSintetizado1 = synthBrass1;
+export const  metalSintetizado2 = synthBrass2;
+
+export const  saxSoprando = sopranoSax;
+export const  saxAlto = altoSax;
+export const  saxTenor = tenorSax;
+export const  saxBarítono = baritoneSax;
+export const  oboé = oboe;
+export const  corneInglês = englishHorn;
+export const  fagote = bassoon;
+export const  clarineta = clarinet;
+export const  clarinete = clarinet;
+export const  pícolo = piccolo;
+export const  flautaTransversal = flute;
+export const  flauta = flute;
+export const  flautaDoce = recorder;
+export const  flautaDePã = panFlute;
+export const  garrafaSoprada = blownBottle;
+export const  garrafa = garrafaSoprada;
+export const  assobio = whistle;
+export const  assovio = assobio;
+export const  gaitaDeFole = bagPipe;
+
+export const  efeito1 = fx1;
+export const  efeito2 = fx2;
+export const  efeito3 = fx3;
+export const  efeito4 = fx4;
+export const  efeito5 = fx5;
+export const  efeito6 = fx6;
+export const  efeito7 = fx6;
+export const  efeito8 = fx8;
+
+export const  agogô = agogo;
+export const  tamborDeAço = steelDrums;
+export const  blocoDeMadeira = woodblock;
+export const  bloco = blocoDeMadeira;
+export const  taiko = taikoDrum;
+export const  tomTom = melodicTom;
+export const  bateriaSintetizada = synthDrum;
+export const  pratoReverso = reverseCymbal;
+export const  trasteDeGuitarra = guitarFretNoise;
+export const  traste = trasteDeGuitarra;
+export const  respiração = breathNoise;
+export const  ondaDoMar = seaShore;
+export const  pássaro = birdTweet;
+export const  telefone = telephoneRing;
+export const  helicóptero = helicopter;
+export const  aplausos = applause;
+export const  tiro = gunshot;
+export const  tímpano = timpani;
+
+export const  bateria1 = drums1;
+export const  bateria = drums1;
+export const  bateria2 = drums2;
+export const  bateria3 = drums3;
+export const  bateria4 = drums4;
+export const  bateria5 = drums5;
+export const  bateria6 = drums6;
