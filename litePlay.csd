@@ -137,7 +137,7 @@ iamp table p5, 5
 aenv madsr iatt+1/kr, idec, isus, irel
 imicro = 2^(frac(p4)/12)
 kbend table p7,14
-a1, a2 sfplay p5, int(p4), iamp*aenv*0.0001, imicro*kbend, p6, 0, 0, 2
+a1, a2 sfplay p5, int(p4), iamp*aenv*0.0002, imicro*kbend, p6, 0, 0, 2
 kv table p7, 2
 
 iatt table p7,19
