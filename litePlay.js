@@ -628,6 +628,10 @@ export async function reset() {
 }
 
 export const rnd = (min, max) => {
+	return Math.random() * (max - min) + min;
+}
+
+export const rndInt = (min, max) => {
 	return Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min)) + Math.ceil(min))}
 
 export const choose = (array) => {
@@ -691,8 +695,7 @@ export function rndIdiophone()  { return choose(idiophoneList)};
 export const membranophone = rndMembranophone;
 export const idiophone = rndIdiophone;
 
-export function onSomething() { return new Instrument(int(rnd(0, 127))); }
-
+export function onSomething() { return new Instrument(rnd(0, 127)); }
 
 // instrument collection
 export const grandPiano = new Instrument(0);
@@ -717,7 +720,7 @@ export const dulcimer = new Instrument(15);
 export const tinkleBell = new Instrument(112);
 
 export function onStruck() {
-    let num = int(rnd(0,16));
+    let num = rnd(0,16);
     if(num > 15) num = 112;
     return new Instrument(num);
 }
@@ -732,7 +735,7 @@ export const accordion = new Instrument(21);
 export const harmonic = new Instrument(22);
 export const tangoAccordion = new Instrument(23);
 
-export function onSus() { return new Instrument(int(rnd(16,23))); }
+export function onSus() { return new Instrument(rnd(16,23)); }
 
 export const nylonAcousticGuitar = new Instrument(24);
 export const guitar = nylonAcousticGuitar;
@@ -753,7 +756,7 @@ export const orchestralHarp = new Instrument(46);
 export const harp = orchestralHarp;
 
 export function onPluck() {
-    let num = int(rnd(24,38));
+    let num = rnd(24,38);
     if(num > 31 && num < 34) num += 13;
     if(num > 33) num += 71;
     return new Instrument(num);
@@ -769,7 +772,7 @@ export const slapBass2 = new Instrument(37);
 export const synthBass1 = new Instrument(38);
 export const synthBass2 = new Instrument(39);
 
-export function onBass() { return new Instrument(int(rnd(32,39))); }
+export function onBass() { return new Instrument(rnd(32,39)); }
 
 export const violin = new Instrument(40);
 export const viola = new Instrument(41);
@@ -779,7 +782,7 @@ export const tremoloStrings = new Instrument(44);
 export const fiddle = new Instrument(111);
 
 export function onBowed() {
-    let num = int(rnd(40,45));
+    let num = rnd(40,45);
     if(num > 44) num = 111;
     return new Instrument(num);
 }
@@ -790,13 +793,13 @@ export const stringEnsemble2 = new Instrument(49);
 export const synthStrings1 = new Instrument(50);
 export const synthStrings2 = new Instrument(51);
 
-export function onEnsemble() { return new Instrument(int(rnd(48,51))); }
+export function onEnsemble() { return new Instrument(rnd(48,51)); }
 
 export const choirAahs = new Instrument(52);
 export const voiceOohs = new Instrument(53);
 export const synthVoice = new Instrument(54);
 
-export function onVoice() { return new Instrument(int(rnd(52,54))); }
+export function onVoice() { return new Instrument(rnd(52,54)); }
 
 export const orchestralHit = new Instrument(55);
 
@@ -811,7 +814,7 @@ export const brass = brassSection;
 export const synthBrass1 = new Instrument(62);
 export const synthBrass2 = new Instrument(63);
 
-export function onBlow() { return new Instrument(int(rnd(56,63))); }
+export function onBlow() { return new Instrument(rnd(56,63)); }
 
 export const sopranoSax = new Instrument(64);
 export const altoSax = new Instrument(65);
@@ -832,7 +835,7 @@ export const ocarina = new Instrument(79);
 export const bagPipe = new Instrument(110);
 
 export function onWind() {
-    let num = int(rnd(64,79));
+    let num = rnd(64,79);
     if(num > 79) num = 110;
     return new Instrument(num);
 }
@@ -846,7 +849,7 @@ export const lead6 = new Instrument(85);
 export const lead7 = new Instrument(86);
 export const lead8 = new Instrument(87);
 
-export function onLead() { return new Instrument(int(rnd(80,87))); }
+export function onLead() { return new Instrument(rnd(80,87)); }
 
 export const pad1 = new Instrument(88);
 export const pad2 = new Instrument(89);
@@ -858,7 +861,7 @@ export const pad6 = new Instrument(93);
 export const pad7 = new Instrument(94);
 export const pad8 = new Instrument(96);
 
-export function onSynth() { return new Instrument(int(rnd(88,96))); }
+export function onSynth() { return new Instrument(rnd(88,96)); }
 
 export const fx1 = new Instrument(97);
 export const fx2 = new Instrument(98);
@@ -869,7 +872,7 @@ export const fx6 = new Instrument(102);
 export const fx7 = new Instrument(103);
 export const fx8 = new Instrument(104);
 
-export function onFx() { return new Instrument(int(rnd(97,104))); }
+export function onFx() { return new Instrument(rnd(97,104)); }
 
 export const agogo = new Instrument(113);
 export const steelDrums = new Instrument(114);
@@ -889,7 +892,7 @@ export const gunshot = new Instrument(127);
 export const timpani = new Instrument(47);
 
 export function onPerc() {
-    let num = int(rnd(113,128));
+    let num = rnd(113,128);
     if(num > 127) num = 47;
     return new Instrument(num);
 }
@@ -903,7 +906,7 @@ export const drums5 = new Instrument(6, true, 40);
 export const drums6 = new Instrument(7, true, 40);
 
 export function onDrums() {
-    return new Instrument(int(rnd(2,7)), true, int(rnd(35,57)));
+    return new Instrument(rnd(2,7)), true, rnd(35,57);
 }
 
 export const silently = ms => new Promise(r => setTimeout(r, ms));
@@ -913,6 +916,7 @@ export const silently = ms => new Promise(r => setTimeout(r, ms));
 // funções
 export const toque = play;
 export const instrumento = instrument;
+export const emAlgo = onSomething;
 export const naBateria = onDrums;
 export const nasTeclas = onStruck;
 export const nasCordas = onPluck;
@@ -920,10 +924,10 @@ export const nosArcos = onBowed;
 export const nosBaixos = onBass;
 export const nosMetais = onBlow;
 export const nosSopros = onWind;
-export const noSint = onSynth;
-export const cosEfeitos = onFx;
+export const noSintetizador = onSynth;
+export const nosEfeitos = onFx;
 export const naPercussão = onPerc;
-export const coaVoz = onVoice;
+export const naVoz = onVoice;
 export const quieto = silently;
 export const escolha = choose;
 
